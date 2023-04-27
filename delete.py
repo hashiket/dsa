@@ -1,14 +1,20 @@
-def mergeSort(arr):
-    if len(arr)>1:
-        mid = len(arr)//2
+def maxSumArray(arr):
+    currSum=0
+    maxSum = arr[0]
 
-        left_arr = arr[:mid]
-        right_arr = arr[mid:]
+    for i in arr:
+        currSum+=i 
+        if currSum>maxSum:
+            maxSum = currSum
+        if currSum<0:
+            currSum = 0
 
-        mergeSort(left_arr)
-        mergeSort(right_arr)
+    return maxSum
 
-        i=j=k=0
-        for i<len(left_arr) and j<len(right_arr):
-            if left_arr[i] < right_arr[j]:
-                arr[]
+arr = [2,3,-4,5,6,-1]
+
+rt = maxSumArray(arr)
+
+print(rt)
+
+        
