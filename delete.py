@@ -25,4 +25,4 @@ def quickSort(arr, s, e):
 arr = [90,89,7,56,34,2,32,10]
 
 quickSort(arr, 0, len(arr)-1)
-print("Sorted Array:"+str(arr))
+print("Sorted array:"+str(arr))
