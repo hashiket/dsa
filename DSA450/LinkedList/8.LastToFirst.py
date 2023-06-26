@@ -1,4 +1,4 @@
-#Detect Loop in LL
+#Move last element to front of a given Linked List
 
 class Node:
     def __init__(self, data):
@@ -14,32 +14,38 @@ class LinkedList:
         node.next = self.head
         self.head = node
 
-
     def printll(self):
         temp = self.head
         while temp:
             print(temp.data)
-            temp= temp.next
+            temp = temp.next
 
-    def loop(self):
+    def move(self):
         temp = self.head
-        s=set()
-        while temp:
-            if temp in s:
-                return True
-            s.add(temp)
-            temp=temp.next
-        return False
+        secl = None
+        while temp.next != None:
+            secl= temp
+            temp = temp.next
 
-    
+        secl.next = None
+
+        temp.next = self.head
+        self.head = temp
+
 
 ll = LinkedList()
 ll.push(1)
 ll.push(2)
-ll.push(3)
+ll.push(1)
 ll.push(4)
 ll.push(5)
-ll.head.next.next.next.next = ll.head
-print(ll.loop())
-#ll.printll()
+ll.push(4)
 
+ll.printll()
+
+ll.move()
+print("####*****")
+
+ll.printll()
+
+            
