@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 def partition(arr, s, e):
     pivot_index = s
     pivot = arr[pivot_index]
@@ -26,3 +27,5 @@ arr = [90,89,7,56,34,2,32,10]
 
 quickSort(arr, 0, len(arr)-1)
 print("Sorted array:"+str(arr))
+=======
+>>>>>>> new
