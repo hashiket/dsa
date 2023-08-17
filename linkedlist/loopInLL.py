@@ -39,7 +39,7 @@ ll.push(2)
 ll.push(3)
 ll.push(4)
 
-#ll.head.next.next.next.next = ll.head
+ll.head.next.next.next.next = ll.head
 
 if(ll.loop()):
     print("Loop Found")
