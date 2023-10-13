@@ -1,31 +1,33 @@
-<<<<<<< HEAD
-def partition(arr, s, e):
-    pivot_index = s
-    pivot = arr[pivot_index]
+def ms(arr):
+    if len(arr)>1:
+        mid=len(arr)//2
+        l = arr[:mid]
+        r = arr[mid:]
 
-    while s<e:
-        while s<len(arr) and arr[s]<=pivot:
-            s+=1
+        ms(l)
+        ms(r)
+        i=j=k=0
+        while i<len(l) and j<len(r):
+            if l[i]<r[j]:
+                arr[k]=l[i]
+                i+=1
+            else:
+                arr[k]=r[j]
+                j+=1
+            k+=1
 
-        while arr[e]>pivot:
-            e-=1
 
-        if s<e:
-            arr[s],arr[e]=arr[e],arr[s]
+        while i <len(l):
+            arr[k] = l[i]
+            i+=1
+            k+=1
 
-    arr[pivot_index],arr[e]=arr[e],arr[pivot_index]
-    return e
+        while j < len(r):
+            arr[k] = r[j]
+            j+=1
+            k+=1
+    
 
-
-def quickSort(arr, s, e):
-    if s<e:
-        p = partition(arr, s, e)
-        quickSort(arr, s, p-1)
-        quickSort(arr, p+1, e)
-
-arr = [90,89,7,56,34,2,32,10]
-
-quickSort(arr, 0, len(arr)-1)
-print("Sorted array:"+str(arr))
-=======
->>>>>>> new
+arr = [9,8,34,2,67,89,6,1]
+ms(arr)
+print(arr)

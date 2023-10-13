@@ -60,6 +60,6 @@ ll.printll()
 
 ll.removeDuplicate()
 ll.printll()
-
+print("************")
 ll.deleteKey(40)
 ll.printll()
